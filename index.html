@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+  <html lang="tr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kyamasia Digital — Bakımdayız</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0B1A22;
+    --bg-2: #0F212B;
+    --ink: #EDF3F2;
+          --ink-dim: #9FB3B0;
+    --accent: #E8A94A;
+          --line: rgba(237,243,242,0.12);
+}
+
+  *{ box-sizing: border-box; }
+
+  html, body{
+        margin:0; padding:0; height:100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+  body{
+        display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    position:relative;
+}
+
+  .grid-field{
+        position:absolute;
+    inset:0;
+    background-image: radial-gradient(circle, rgba(232,169,74,0.35) 1px, transparent 1.5px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(ellipse 60% 55% at 78% 30%, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 55% at 78% 30%, black 0%, transparent 70%);
+    animation: drift 18s linear infinite;
+    pointer-events:none;
+}
+
+  @keyframes drift{
+        0%{ background-position: 0 0; }
+    100%{ background-position: 56px 28px; }
+}
+
+  @media (prefers-reduced-motion: reduce){
+        .grid-field{ animation: none; }
+}
+
+  header{
+    position:relative;
+    z-index:2;
+    padding: 40px clamp(24px, 6vw, 72px) 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .wordmark{
+        font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration:none;
+}
+
+  .wordmark span{ color: var(--accent); }
+
+  main{
+        position:relative;
+    z-index:2;
+    flex:1;
+    display:flex;
+    align-items:center;
+    padding: 24px clamp(24px, 6vw, 72px);
+}
+
+  .content{
+        max-width: 620px;
+}
+
+  .status-line{
+        display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom: 28px;
+    color: var(--ink-dim);
+    font-size: 14px;
+}
+
+  .dot{
+        width:8px; height:8px;
+    border-radius:50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 rgba(232,169,74,0.5);
+    animation: pulse 2.4s ease-out infinite;
+  }
+
+  @keyframes pulse{
+        0%   { box-shadow: 0 0 0 0 rgba(232,169,74,0.45); }
+    70%  { box-shadow: 0 0 0 10px rgba(232,169,74,0); }
+    100% { box-shadow: 0 0 0 0 rgba(232,169,74,0); }
+}
+
+  @media (prefers-reduced-motion: reduce){
+        .dot{ animation: none; }
+}
+
+  h1{
+        font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(34px, 5.2vw, 54px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 22px;
+}
+
+  p.lead{
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-dim);
+    margin: 0 0 36px;
+    max-width: 46ch;
+  }
+
+  .contact{
+        display:inline-flex;
+    align-items:baseline;
+    gap:10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .contact a{
+        color: var(--ink);
+    text-decoration:none;
+    font-size: 15px;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: opacity 0.15s ease;
+  }
+
+  .contact a:hover{ opacity: 0.75; }
+
+  .contact-label{
+        color: var(--ink-dim);
+    font-size: 15px;
+}
+
+  footer{
+        position:relative;
+    z-index:2;
+    padding: 24px clamp(24px, 6vw, 72px) 32px;
+    display:flex;
+    justify-content:space-between;
+    color: var(--ink-dim);
+    font-size: 13px;
+    border-top: 1px solid var(--line);
+}
+
+  @media (max-width: 520px){
+    footer{ flex-direction:column; gap:6px; }
+}
+</style>
+  </head>
+  <body>
+
+    <div class="grid-field" aria-hidden="true"></div>
+
+    <header>
+      <a class="wordmark" href="/">Kyamasia<span>.</span>Digital</a>
+    </header>
+
+    <main>
+      <div class="content">
+        <div class="status-line">
+          <span class="dot"></span>
+          Bakım çalışması sürüyor
+      </div>
+
+      <h1>Sitemizi biraz daha iyi hale getiriyoruz.</h1>
+
+        <p class="lead">
+          Kyamasia Digital şu anda planlı bir bakım çalışması nedeniyle
+        erişime kapalı. Kısa süre içinde geri döneceğiz.
+        </p>
+
+        <div class="contact">
+          <span class="contact-label">Bize ulaşın:</span>
+          <a href="mailto:info@kyamasiadigital.com">info@kyamasiadigital.com</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2026 Kyamasia Digital</span>
+      <span>Tüm hakları saklıdır</span>
+    </footer>
+
+  </body>
+  </html>
+  
